@@ -10,5 +10,6 @@ app.post('/', function(req, res){
     var html = 'hello ' + userName + ' you have passed identity verification'
     res.send(html)
 })
-app.listen(8000)
-console.log('listening on http://loclahost:8000')
+var port = process.env.port || 8000
+app.listen(port)
+console.log('listening on http://loclahost:'+ port)
