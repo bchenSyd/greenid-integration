@@ -44,25 +44,40 @@
 	<body>
 	
 		<div class="container" >
-			<h1>Bambora GreenID integration Test</h1>
+			<h1>Bambora Onboarding</h1>
 		    		
 			<div class="panel panel-default">
 				<div class="panel-body">
+					
+					
+					<!-- 
+						The content of this 'greenid-div' div will be removed and replaced with the greenID content. 
+						It can just be an empty div.
+						This div ID is specified at the bottom of the page in the setup function and can be whatever you like.
+					-->
 					<div id="greenid-div">
-						<h3>Please follow instructions to get your identitfy verified</h3>
+						  <h3> follow the instructions below to verify your identity... </h1>
 					</div>
 						
-				
+						
+					<!-- 
+						Your form will be hidden when it's submitted. 
+						You specify your form ID in the setup function below.
+					-->
 					<form method="POST" action="/" id="theform" role="form" onsubmit="workoutNZsuburb();">
-					
-						<input type="hidden" id="accountId" value="bambora" name="accountId"/>
+						
+						<!-- 
+							Your accountId (sometimes known as your customerId) is unique to you and remains the same in test and production
+						-->
+						<input type="hidden" id="accountId" value="bambora" name="accountId"/> 
+						
 						<!-- 
 							Your apiCode will be different in test and production. 
 							The one that's first included below for you is for the test environment. 
 						-->
 						<input type="hidden" id="apiCode" value="bVu-eLH-DAW-8Au" name="apiCode"/> 
 						
-						<input type="hidden" id="usethiscountry" value="NZ" name="country"/>
+						<input type="hidden" id="usethiscountry" value="NZ" name="country"/>						
 						<div class="row" style="margin-top:20px">
 							
 							<div class="form-group col-sm-4">
@@ -100,85 +115,17 @@
 							</div>
 							
 							<div id="address-non-harmony-div">
-						
-							<hr/>
-							
-							<fieldset>
-								<label>Address</label>
-								
-								<div class="row">
-					
-						            <div class="form-group col-sm-2">
-						                <label for="flatNumber" class="control-label">Unit Number</label>
-						                <input type="text" id="flatNumber" name="flatNumber" class="form-control"/>
-						            </div>
-					
-						            <div class="form-group col-sm-2">
-						                <label for="streetNumber" class="control-label">Street Number</label>
-						                <input type="text" id="streetNumber" name="streetNumber" class="form-control"/>
-						            </div>
-					
-						            <div class="form-group col-sm-4">
-						                <label for="streetName" class="control-label">Street Name</label>
-						                <input type="text" id="streetName" name="streetName" class="form-control"/>
-						            </div>
-					
-						            <div class="form-group col-sm-4">
-						                <label for="streetType" class="control-label">Street Type</label>
-					                    <select id="streetType" class="form-control">
-						                	<option value="" selected="selected">Select your street type...</option>
-						                	<option value="AVE">Avenue</option>
-											<option value="CIR">Circle</option>
-											<option value="CCT">Circuit</option>
-											<option value="CL">Close</option>
-											<option value="CT">Court</option>
-											<option value="CRES">Crescent</option>
-											<option value="DR">Drive</option>
-											<option value="ESP">Esplanade</option>
-											<option value="EXP">Expressway</option>
-											<option value="HWY">Highway</option>
-											<option value="LANE">Lane</option>
-											<option value="MWY">Motorway</option>
-											<option value="PDE">Parade</option>
-											<option value="PL">Place</option>
-											<option value="RD">Road</option>
-											<option value="SQ">Square</option>
-											<option value="ST">Street</option>
-											<option value="TCE">Terrace</option>
-											<option value="WAY">Way</option>
-					                    </select>
-						            </div>
-						            
-								</div>
-								
-								<div class="row">
-					
-						            <div class="form-group col-sm-4">
-						                <label for="suburb" class="control-label">Suburb</label>
-						                <input type="text" id="suburb" name="suburb" class="form-control"/>
-						            </div>
-						            
-	                                					
-	
-						            <div class="form-group col-sm-2">
-						                <label for="postcode" class="control-label">Postcode</label>
-						                <input type="text" id="postcode" name="postcode" class="form-control"/>
-						            </div>
-					            
-								</div>
-								
-							</fieldset>
-							
-							<hr/>
-						</div>	
+									<h1> harmoney not enabled </h1>
+							</div>	
 							
 						</div>
 						<div id="address-loading-placeholder"><label class="control-label">Address fields loading...</label></div>
+														
 						<div class="row">
 							<div class="form-group col-sm-3 col-lg-2">
 								<label for="dob" class="control-label">Date of Birth (DD/MM/YYYY)</label>
 								<div class="input-group date">
-									<input type="text" name="dob" id="dob" class="form-control" aria-required="true" value="1/1/2000" />
+									<input type="text" name="dob" id="dob" class="form-control" aria-required="true" value="1/1/1982"/>
 									<span class="input-group-addon datepicker"><span class="glyphicon glyphicon-calendar"></span></span>
 								</div>
 							</div>
@@ -202,16 +149,25 @@
 			</div>   
 		</div>
 		
+		<!-- 
+			These Javascript files and are not required, and are used for the initial data capture screen only. 
+		-->
 		<script src="/js/for-harmony/jquery-1.11.0.min.js"></script>
+		<script src="https://test2.edentiti.com/df/javascripts/libs/bootstrap-datepicker.js" type="text/javascript"></script>
+		<script src="/js/simpleui-demo.js"></script>
+		
 		<!-- 
 			These two JavaScript files are required.
 			Link to them as below, don't take a local copy.
 			The greenidConfig.js file contains the full list of on-screen wording that can be customised via the setOverrides function (below). 
 		-->
 		<script src="https://test2.edentiti.com/df/javascripts/greenidConfig.js" type="text/javascript"></script>
-		<script src="https://test2.edentiti.com/df/javascripts/greenidui.min.js" type="text/javascript"></script>		
-		<script type="text/javascript" src="./setup.js" />
-
+		<script src="https://test2.edentiti.com/df/javascripts/greenidui.min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript" src="/js/setup.js" />
+	
+		
+		</script>
 		<!-- 
 			These files are for the Harmony address matching solution, used on this data capture page only.
 			They are not required for greenID, though use of address matching is recommended.
@@ -219,6 +175,7 @@
 	    <script src="/js/for-harmony/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
 	    <script src="/js/for-harmony/harmony-1.4.0.min.js" type="text/javascript"></script>
 	    <script src="/js/for-harmony/harmony-ui-1.3.0.min.js" type="text/javascript"></script>
-		<script src="/js/for-harmony/enable-nz-harmony.js" type="text/javascript"></script>
+		<script src="/js/for-simpleui-demo-harmony/enable-nz-harmony.js" type="text/javascript"></script>
+
 	</body>
 </html>

@@ -37,7 +37,7 @@
 	        });
 	        
 			function workoutNZsuburb() {
-
+					//alert('workoutNZsuburb')
             		var realsuburb = document.getElementById('suburb');
                     var nzsuburb = document.getElementById('nzsuburb');
                     var nztown = document.getElementById('nztown');
