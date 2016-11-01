@@ -16,25 +16,6 @@
 	        
 	        Harmony.UI.addField(Harmony.SUBURB, $("#nzsuburb"));
 	        Harmony.UI.addField(Harmony.TOWN_CITY, $("#nztown"));
-
-	        var accountId = document.getElementById('accountId').value;
-	        
-	        $.get('/harmony/harmony-health-check.seam?customerid='.concat(accountId)).then(function(responseData) {
-	        	  //responseData is the contents of the other page. Do whatever you want with it.
-
-	        	if (responseData.indexOf("can use harmony") > -1)
-	        	  {
-	        		  $("#address-non-harmony-div").hide();
-	        	  }
-	        	  else
-	        	  {
-	        		  $("#address-harmony-div").hide();		  
-	        	  }
-	        	
-        	    $('#address-loading-placeholder').fadeOut('slow', function() {
-		        	$('#address-fields').fadeIn();
-	        	});
-	        });
 	        
 			function workoutNZsuburb() {
 					//alert('workoutNZsuburb')

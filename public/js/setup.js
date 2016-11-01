@@ -17,4 +17,12 @@
 			    greenidConfig.setOverrides();
 			    
 			})
-			
+	window.addEventListener('message', function(event) { 
+		//  // IMPORTANT: Check the origin of the data! 
+        //if (~event.origin.indexOf('http://yoursite.com')) {
+        if(event.data === 'submit' && $("#greenid-error-content").length === 0){
+			$('#btn_submit').click()
+			console.log(window.parent)
+			window.parent.$("#test").val("test data from iframe")
+		}
+}); 
